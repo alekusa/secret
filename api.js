@@ -20,3 +20,18 @@ export const deleteTask = async (id) => {
         method: 'DELETE'
     })
 }
+export const unaTarea = async (id) => {
+    const res = await fetch(`${URL}/${id}`)
+    return await res.json()
+}
+export const updateTask = async (id, newTask) => {
+    const res = await fetch(`${URL}/${id}`, {
+        method: 'PUT',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newTask)
+    })
+    return res
+}

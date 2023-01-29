@@ -6,7 +6,9 @@ const TaskItem = ({ task, handleDelet }) => {
     const nav = useNavigation()
     return (
         <View style={styles.itemContainer}>
-            <TouchableOpacity onPress={() => nav.navigate('task')}>
+            <TouchableOpacity
+                onPress={() => nav.navigate('task', { id: task.id })}
+            >
                 <Text style={styles.imtemTitle}>{task.name}</Text>
                 <Text style={styles.imtemTitle}>{task.priority}</Text>
                 <Text style={styles.imtemTitle}>{task.description}</Text>
