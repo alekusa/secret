@@ -1,5 +1,3 @@
-const URL = 'https://limpio.fly.dev/user'
-
 export const getTasks = async () => {
     const res = await fetch(URL)
     return await res.json()
