@@ -9,9 +9,10 @@ const TaskItem = ({ task, handleDelet }) => {
             <TouchableOpacity
                 onPress={() => nav.navigate('task', { id: task.id })}
             >
-                <Text style={styles.imtemTitle}>{task.name}</Text>
-                <Text style={styles.imtemTitle}>{task.priority}</Text>
-                <Text style={styles.imtemTitle}>{task.description}</Text>
+                <Text style={styles.imtemTitle}>{task.username}</Text>
+                <Text style={styles.imtemTitle}>{task.password}</Text>
+                <Text style={styles.imtemTitle}>{task.email}</Text>
+                <Text style={styles.imtemTitle}>{task.id}</Text>
                 <Text style={styles.imtemTitle}>{task.createdAt}</Text>
             </TouchableOpacity>
             <TouchableOpacity

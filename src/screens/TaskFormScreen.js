@@ -5,9 +5,9 @@ import { saveTask, unaTarea, updateTask } from '../../api'
 
 const TaskFormScreen = ({ navigation, route }) => {
     const [task, setTask] = useState({
-        name: '',
-        description: '',
-        priority: '',
+        username: '',
+        email: '',
+        password: '',
         pass2: ''
     })
     const [editing, setEditing] = useState(false)
@@ -20,9 +20,9 @@ const TaskFormScreen = ({ navigation, route }) => {
             ;(async () => {
                 const task = await unaTarea(route.params.id)
                 setTask({
-                    name: task.name,
-                    description: task.description,
-                    priority: task.priority
+                    username: task.username,
+                    email: task.email,
+                    password: task.password
                 })
             })()
         }
@@ -43,24 +43,24 @@ const TaskFormScreen = ({ navigation, route }) => {
         <Layout>
             <TextInput
                 style={style.input}
-                placeholder="Ingresar Cuenta"
+                placeholder="Username"
                 placeholderTextColor={'#546574'}
-                onChangeText={(text) => handleChange('name', text)}
-                value={task.name}
+                onChangeText={(text) => handleChange('username', text)}
+                value={task.username}
             ></TextInput>
             <TextInput
                 style={style.input}
-                placeholder="Dato Cuenta"
+                placeholder="Password"
                 placeholderTextColor={'#546574'}
-                onChangeText={(text) => handleChange('description', text)}
-                value={task.description}
+                onChangeText={(text) => handleChange('password', text)}
+                value={task.password}
             ></TextInput>
             <TextInput
                 style={style.input}
-                placeholder="Password _1"
+                placeholder="email"
                 placeholderTextColor={'#546574'}
-                onChangeText={(text) => handleChange('priority', text)}
-                value={task.priority}
+                onChangeText={(text) => handleChange('email', text)}
+                value={task.email}
             ></TextInput>
             <TextInput
                 style={style.input}
