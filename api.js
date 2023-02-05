@@ -1,3 +1,6 @@
+//const URL = 'http://10.0.2.2:4000/project'
+//onst URL = 'http://localhost:4000/project'
+const URL = 'https://limpio.fly.dev/user'
 export const getTasks = async () => {
     const res = await fetch(URL)
     return await res.json()
